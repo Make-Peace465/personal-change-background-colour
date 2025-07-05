@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            height: 600px;
+        }
+
+        button {
+            height: 40px;
+            width: 300px;
+            margin: 1em;
+            font-family: sans-serif;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: burlywood;
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <button>Change the color!</button>
+
+    <script>
+    let i = 5;
+    const button = document.querySelector("button");
+
+    //Create an eventhandler to trigger the function when the button is clicked
+    button.addEventListener("click", changeBGColor);
+
+    //Create a function to generate a random number
+    function ranNum(n) {
+        return Math.floor(Math.random() * (n + 1));
+    }
+    
+    function changeBGColor() {
+        //generate a random color
+        let randomColor = `rgb(${ranNum(255)}, ${ranNum(255)}, ${ranNum(255)})`;
+        //Change the background color
+        document.body.style.background = randomColor;
+    }
+    </script>
+</body>
+</html>
